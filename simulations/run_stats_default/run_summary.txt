@@ -1,0 +1,17 @@
+=== Run summary ===
+Run ID: 0
+Output tag (simulations subdir): run_stats_default
+Events: 1000
+Primary aimed at habitat (finite cylinder): 47
+  ... entered habitat: 23
+Shielding efficiency (aimed primary, %): 51.063829787234049
+Primary aimed (charged only): 47
+  ... entered: 23
+Shielding efficiency charged (aimed, %): 51.063829787234049
+Events with n/gamma (track!=1) entering habitat (% of events): 5.4000000000000004
+Absorbed dose in habitat (air proxy), Gy: 1.3045996464912669e-23
+Equivalent dose estimate (Q=2.5), Sv: 3.2614991162281674e-23
+Neutron captures in MgB2 (count): 0
+Total track entries to habitat (diagnostic): 772
+Events with any habitat entry: 459
+===================

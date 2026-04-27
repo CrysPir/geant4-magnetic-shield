@@ -1,0 +1,4 @@
+/sim/outputTag run_10_default
+
+/run/verbose 1
+/run/beamOn 10

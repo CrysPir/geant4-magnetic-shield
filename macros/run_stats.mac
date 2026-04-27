@@ -1,0 +1,6 @@
+# Batch-style statistics run (no vis). Cosmic-ray mix, hemisphere toward -Z by default.
+/sim/outputTag run_stats_default
+
+/run/verbose 0
+/cosmic/isotropic false
+/run/beamOn 1000

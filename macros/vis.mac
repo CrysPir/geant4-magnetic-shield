@@ -1,0 +1,19 @@
+# Visualization defaults for geometry verification.
+/vis/open OGL
+/vis/verbose warnings
+/vis/viewer/set/autoRefresh false
+
+/vis/drawVolume
+/vis/scene/add/axes 0 0 0 2 m
+/vis/scene/add/scale 1 m
+/tracking/storeTrajectory 1
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+
+/vis/viewer/set/viewpointThetaPhi 90 0
+/vis/viewer/zoom 1.2
+
+/vis/viewer/set/autoRefresh true
+/vis/viewer/flush

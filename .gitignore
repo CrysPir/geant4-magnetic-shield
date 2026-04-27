@@ -1,0 +1,98 @@
+# --- CMake / build trees ---
+build/
+out/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+_deps/
+install_manifest.txt
+
+# Ninja / generated
+*.ninja
+.ninja_deps
+.ninja_log
+rules.ninja
+build.ninja
+
+# Make (if used)
+Makefile
+*.make
+
+# Compile database (regenerate locally)
+compile_commands.json
+
+# --- Compiled binaries & link artifacts ---
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.dll
+*.so
+*.so.*
+*.dylib
+*.exp
+*.pdb
+*.ilk
+*.idb
+*.pch
+
+# --- Visual Studio / MSVC ---
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+x64/
+x86/
+Win32/
+ARM/
+ARM64/
+[Dd]ebug/
+[Rr]elease/
+[Rr]eleases/
+[Mm]in[Ss]ize[Rr]el/
+[Rr]el[Ww]ith[Dd]eb[Ii]nfo/
+*.tlog
+*.lastbuildstate
+*.recipe
+ipch/
+
+# --- Geant4: visualization exports & scratch ---
+*.wrl
+*.prim
+*.eps
+*.heprep
+*.dae
+*.g4mac~
+
+# --- Physics / analysis outputs (uncomment if you never commit these) ---
+# *.root
+# *.h5
+# *.csv
+
+# --- Editors & OS ---
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Python venv / caches (optional analysis scripts) ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
