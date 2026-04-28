@@ -59,12 +59,25 @@ Habitat: air cylinder **R = 2 m**, half-length **5 m**. Passive shell: Al **2.0â
 
 After each completed run, the app writes **`run_summary.txt`** and **`spectrum_passed_habitat.csv`** either directly under **`simulations/`** or under **`simulations/<tag>/`** if you set **`/sim/outputTag <tag>`** in your macro (before `beamOn`). See **`simulations/README.md`** (Russian) for a full explanation of each line.
 
+## Visual outputs in `visualisations/`
+
+Use dedicated macros to save DAWNFILE visualizations (`*.prim`):
+
+- `macros/vis_save_geometry.mac` -> `visualisations/geometry.prim`
+- `macros/vis_save_events_default.mac` -> `visualisations/events_default.prim` (isotropic sphere source)
+- `macros/vis_save_events_skydisk.mac` -> `visualisations/events_skydisk.prim` (SkyDisk source)
+
+Note: if DAWN executable is not installed, Geant4 prints a warning, but the `.prim` file is still generated successfully.
+
 ## Macros
 
 | Macro | Purpose |
 |--------|--------|
 | `macros/vis.mac` | Interactive vis + trajectory style |
 | `macros/geometry_vis.mac` | Geometry only |
+| `macros/vis_save_geometry.mac` | Save geometry DAWNFILE (`.prim`) to `visualisations/` |
+| `macros/vis_save_events_default.mac` | Save trajectories DAWNFILE (`.prim`, isotropic sphere source) |
+| `macros/vis_save_events_skydisk.mac` | Save trajectories DAWNFILE (`.prim`, SkyDisk source) |
 | `macros/run_1.mac` / `run_10.mac` / `run_100.mac` | Short runs |
 | `macros/run_stats.mac` | 1000 events, quiet |
 | `macros/run_10k.mac` / `run_50k.mac` | 10k / 50k events, isotropic sphere source |

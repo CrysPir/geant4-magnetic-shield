@@ -1,0 +1,12 @@
+# Save geometry visualization to a DAWNFILE output (*.prim).
+/vis/open DAWNFILE
+/vis/verbose warnings
+/vis/viewer/set/autoRefresh false
+/vis/drawVolume
+/vis/scene/add/axes 0 0 0 2 m
+/vis/scene/add/scale 1 m
+/vis/viewer/set/viewpointThetaPhi 90 0
+/vis/viewer/zoom 1.2
+/vis/viewer/set/autoRefresh true
+/vis/viewer/flush
+/control/shell powershell -Command "New-Item -ItemType Directory -Force visualisations | Out-Null; Move-Item -Force g4_*.prim visualisations/geometry.prim"

@@ -75,6 +75,8 @@ ipch/
 *.heprep
 *.dae
 *.g4mac~
+visualisations/*.png
+visualisations/*.jpg
 
 # --- Physics / analysis outputs (uncomment if you never commit these) ---
 # *.root
@@ -96,3 +98,5 @@ Desktop.ini
 venv/
 __pycache__/
 *.py[cod]
+.DAWN*
+.jython_cache
