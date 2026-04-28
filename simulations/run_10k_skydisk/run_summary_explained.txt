@@ -1,0 +1,57 @@
+=== Run summary ===
+Run ID: 0
+Output tag (simulations subdir): run_10k_skydisk
+Events: 10000
+Primary aimed at habitat (finite cylinder): 436
+  ... entered habitat: 297
+Shielding efficiency (aimed primary, %): 31.88073394495413
+Primary aimed (charged only): 435
+  ... entered: 296
+Shielding efficiency charged (aimed, %): 31.954022988505749
+Events with n/gamma (track!=1) entering habitat (% of events): 7.6600000000000001
+Absorbed dose in habitat (air proxy), Gy: 1.3342221076118866e-22
+Equivalent dose estimate (Q=2.5), Sv: 3.3355552690297167e-22
+Neutron captures in MgB2 (count): 1
+Total track entries to habitat (diagnostic): 8246
+Events with any habitat entry: 4947
+===================
+
+
+--------------------------------------------------------------------------------
+Пояснения (метрики защиты и облучения жилого модуля)
+--------------------------------------------------------------------------------
+
+Primary aimed at habitat / entered habitat
+  Геометрический критерий: прямая из точки рождения первичного луча вдоль
+  начального импульса пересекает конечный цилиндр жилого модуля (R = 2 м,
+  полудлина по Z = 5 м). «Entered» — сколько из этих направленных первичных
+  реально вошли в объём (первое пересечение границы внутрь).
+
+Shielding efficiency (aimed primary, %)
+  100 * (N_aimed - N_entered) / N_aimed — доля направленных на цилиндр
+  первичных, которые не попали внутрь объёма (экран, поле и т.д.). Чем выше
+  процент, тем сильнее отсев по этой подвыборке.
+
+Primary aimed (charged only) / entered / efficiency charged
+  То же для заряженных первичных (гаммы не считаются). При совпадении счётчиков
+  с общими aimed/entered среди направленных на цилиндр нейтральных первичных
+  не было.
+
+Events with n/gamma (track!=1) entering habitat (% of events)
+  Доля событий, где во внутрь модуля зашёл хотя бы один вторичный нейтрон или
+  гамма (не первичный трек). Показывает нейтральную и каскадную компоненту
+  отдельно от первичного попадания.
+
+Absorbed dose in habitat (air proxy), Gy
+  Поглощённая энергия в объёме модуля (воздух NIST) / масса объёма. Это доза
+  в воздухе-заместителе, не в ткани; при данной статистике величина может быть
+  очень малой.
+
+Neutron captures in MgB2 (count)
+  Захваты нейтронов в MgB2 (материал соленоида). Ноль при малой статистике
+  или при настройке физики/порога не исключается; для нейтронов важен
+  корректный HP-список и пути к данным.
+
+Total track entries / Events with any habitat entry
+  Служебные счётчики: сколько раз любой трек впервые вошёл в модуль и в скольких
+  событиях был хотя бы один такой вход (первичный или вторичный).

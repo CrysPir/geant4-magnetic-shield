@@ -67,7 +67,8 @@ After each completed run, the app writes **`run_summary.txt`** and **`spectrum_p
 | `macros/geometry_vis.mac` | Geometry only |
 | `macros/run_1.mac` / `run_10.mac` / `run_100.mac` | Short runs |
 | `macros/run_stats.mac` | 1000 events, quiet |
-| `macros/run_10k.mac` / `run_50k.mac` | 10k / 50k events |
+| `macros/run_10k.mac` / `run_50k.mac` | 10k / 50k events, isotropic sphere source |
+| `macros/run_10k_skydisk.mac` / `run_50k_skydisk.mac` | 10k / 50k events, SkyDisk from +Z |
 
 After opening the UI, you can still run `/control/execute macros/run_10.mac`.
 

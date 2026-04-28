@@ -1,0 +1,6 @@
+/sim/outputTag run_50k_skydisk
+
+/run/verbose 0
+/cosmic/isotropic false
+/cosmic/useSkyDisk true
+/run/beamOn 50000
