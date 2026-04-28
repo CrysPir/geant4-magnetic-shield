@@ -1,4 +1,6 @@
 /sim/outputTag run_1_default
 
 /run/verbose 1
+/cosmic/isotropic true
+/cosmic/useSkyDisk false
 /run/beamOn 1

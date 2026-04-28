@@ -42,10 +42,10 @@ void PrimaryGeneratorAction::DefineCommands()
 {
   fMessenger = new G4GenericMessenger(this, "/cosmic/", "Cosmic ray primary settings");
   fMessenger->DeclareProperty("isotropic", fIsotropicAngular)
-    .SetGuidance("If true, isotropic 4pi directions; if false, hemisphere toward -Z.");
+    .SetGuidance("If true (default), isotropic 4pi directions; if false, hemisphere toward -Z.");
   fMessenger->DeclareProperty("useSkyDisk", fUseSkyDisk)
-    .SetGuidance("If true (default), emit from a disk above +Z so rays hit the habitat cylinder; "
-                 "if false, emit from a sphere (very few rays intersect — aimed count ~0).");
+    .SetGuidance("If true, emit from a disk above +Z so rays hit the habitat cylinder; "
+                 "if false (default), emit from a sphere for isotropic cosmic irradiation.");
 }
 
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event* event)

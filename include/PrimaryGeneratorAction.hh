@@ -25,9 +25,9 @@ private:
   EventAction* fEventAction = nullptr;
   CosmicRaySampler fSampler;
   G4GenericMessenger* fMessenger = nullptr;
-  G4bool fIsotropicAngular = false;
-  /// Default true: disk at +Z so finite-cylinder "aimed" metric is populated; false = sphere (rare hits).
-  G4bool fUseSkyDisk = true;
+  G4bool fIsotropicAngular = true;
+  /// Default false: source on sphere for isotropic 4pi irradiation.
+  G4bool fUseSkyDisk = false;
 };
 
 #endif

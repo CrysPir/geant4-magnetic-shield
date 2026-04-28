@@ -1,7 +1,6 @@
 #include "ActionInitialization.hh"
 #include "DetectorConstruction.hh"
 
-#include "FTFP_BERT.hh"
 #include "G4PhysListFactory.hh"
 #include "G4RunManagerFactory.hh"
 #include "G4String.hh"
@@ -23,11 +22,16 @@ int main(int argc, char** argv)
   for (const auto& name : candidates) {
     if (factory.IsReferencePhysList(name)) {
       physicsList = factory.GetReferencePhysList(name);
+      G4cout << "[physics] Using reference physics list: " << name << G4endl;
       break;
     }
   }
   if (!physicsList) {
-    physicsList = new FTFP_BERT;
+    G4Exception("main",
+                "PhysicsListMissingHP",
+                FatalException,
+                "No HP-capable physics list found (FTFP_BERT_HP/Shielding/QGSP_BIC_HP). "
+                "Install Geant4 data and select an HP list.");
   }
   runManager->SetUserInitialization(physicsList);
 

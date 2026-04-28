@@ -1,5 +1,6 @@
 /sim/outputTag run_10k_default
 
 /run/verbose 0
-/cosmic/isotropic false
+/cosmic/isotropic true
+/cosmic/useSkyDisk false
 /run/beamOn 10000

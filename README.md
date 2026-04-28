@@ -27,16 +27,16 @@ Single-config generators (e.g. Ninja): `.\build\MyShield.exe`.
 
 ## Cosmic-ray source (macros)
 
-- `/cosmic/isotropic false` — hemisphere toward **−Z** (default in `run_*.mac`).
-- `/cosmic/isotropic true` — isotropic **4π** directions.
-- **`/cosmic/useSkyDisk true`** (default) — vertex on a **disk at z = +11 m**, **r ≤ 2 m** (uniform in area), so most primaries **geometrically intersect** the habitat cylinder and the **“aimed at habitat”** counters are meaningful.
-- **`/cosmic/useSkyDisk false`** — vertex on a **sphere r = 10.5 m**; with random direction the solid angle on the habitat is tiny, so **“Primary aimed at habitat”** is usually **0** even when secondaries still hit the habitat.
+- `/cosmic/isotropic true` — isotropic **4π** directions (**default**).
+- `/cosmic/isotropic false` — hemisphere toward **−Z**.
+- **`/cosmic/useSkyDisk false`** (**default**) — vertex on a **sphere r = 10.5 m** for isotropic irradiation.
+- **`/cosmic/useSkyDisk true`** — vertex on a **disk at z = +11 m**, **r ≤ 2 m** (uniform in area), useful for targeted tests where many primaries are aimed at the habitat.
 
 Mixture: **70% GCR** (power law E⁻²·⁷, p / α / ⁵⁶Fe per spec) and **30% SEP** (E⁻²·⁰; SEP protons include **0.2%** photon share subtracted from proton weight).
 
 ## Physics list
 
-The app tries reference lists in order: **FTFP_BERT_HP**, **Shielding**, **QGSP_BIC_HP**. If none is registered, it falls back to **FTFP_BERT** (no HP). For neutron capture on **B-10**, use an install built with HP data and prefer `_HP` or **Shielding**.
+The app tries reference lists in order: **FTFP_BERT_HP**, **Shielding**, **QGSP_BIC_HP**. If none is registered, it now **stops with a fatal error** (no fallback to non-HP lists). This guarantees HP-capable neutron physics for capture in **B-10**.
 
 ## Geometry (Z = ship axis)
 
@@ -44,7 +44,7 @@ Habitat: air cylinder **R = 2 m**, half-length **5 m**. Passive shell: Al **2.0�
 
 ## Magnetic field
 
-**r ≤ 2.5 m:** Bz = **2 T** (uniform). **2.5 m < r < 6.5 m:** Bz = **2 − (r − 2.5)** T (with **r** in metres). **r ≥ 6.5 m** or **Bz < 0:** Bz = 0; Bx = By = 0.
+**r ≤ 2.5 m:** Bz = **2 T** (uniform). **2.5 m < r < 6.5 m:** linear drop to **0.2 T** at 6.5 m. **r ≥ 6.5 m:** exponential tail `Bz = 0.2 * exp(-(r - 6.5)/3.0)` T (with **r** in metres). **Bx = By = 0**.
 
 ## Metrics (end of run)
 
